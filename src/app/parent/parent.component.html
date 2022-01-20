@@ -1,3 +1,36 @@
-<p>parent works!</p>
-<app-child [childName]="parentName" (newEventEmitter)="addToChild($event)"> </app-child>
-<h2>{{childData}}</h2>
+<section id="sec-1">
+
+    <article class="art">
+
+        <h3>INTERPOLATION : </h3>
+        <span class="align">{{forInterpolation}}</span>
+
+    </article>
+
+    <article class="art">
+        <h3>PROPERTY BINDING : </h3>
+        <img class="imgStyle" [src]="imgURL" alt="manwithscythe">
+    </article>
+
+    <article class="art">
+        <h3>EVENT BINDING : </h3>
+        <button class="btnStyle" (click)="onClick()">CLICK</button>
+    </article>
+
+    <article class="art">
+        <h3>TWO-WAY BINDING : </h3>
+        <input class="" type="text" name="button" id="bindBtn" [(ngModel)]="inputValue">
+        <span>  {{inputValue}}</span>
+    </article>
+
+    <article class="art"> 
+        <h3>PARENT TO CHILD : </h3>
+        <input class="" type="text" #inputvalue>
+        <button class="btnStyle" (click)="saveParentToChild(inputvalue.value)">CLICK</button>
+        <app-child [toChild]="fromParentToChild" (newEventEmitter)="saveChildData($event)"></app-child>
+        <span>{{fromChildToParent}}</span>
+    </article>
+
+    
+
+</section>

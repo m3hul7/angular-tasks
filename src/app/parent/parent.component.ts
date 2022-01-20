@@ -7,16 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
 
+  forInterpolation:string = 'HI THERE';
+  imgURL:string = '../../assets/silhouette-manwithscythe-1900.svg';
+  inputValue?:string;
+  fromParentToChild:string = '';
+  fromChildToParent:string = '';
   constructor() { }
+
+  onClick() {
+    alert("HEY YOU JUST CLICKED ME!!");
+  }
+
+  saveChildData(childData:string){
+    this.fromChildToParent = childData;
+  }
+  saveParentToChild(value:string) {
+    this.fromParentToChild = value;
+  }
 
   ngOnInit(): void {
   }
-  parentName: string = "i am parent";
-  childData?:string;
-
-  // items = ['item1', 'item2', 'item3', 'item4'];
-
-  addToChild(newItem: string) {
-    this.childData = newItem;
-  }
+  
+  
 }

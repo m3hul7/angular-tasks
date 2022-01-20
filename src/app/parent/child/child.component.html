@@ -1,5 +1,5 @@
-<p>child works!</p>
-<h1>{{childName}}</h1>
+<span>{{toChild}}</span>
+<br>
+<h3>CHILD TO PARENT : </h3>
 <input type="text" #inputvalue>
-<button (click)="toParent(inputvalue.value)">child to parent</button>
-<h2></h2>
+<button class="btnStyle" (click)="eventBind(inputvalue.value)">CLICK</button>
