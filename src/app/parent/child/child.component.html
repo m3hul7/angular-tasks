@@ -1,3 +1,5 @@
 <p>child works!</p>
 <h1>{{childName}}</h1>
-<button (click)="toParent()"></button>
+<input type="text" #inputvalue>
+<button (click)="toParent(inputvalue.value)">child to parent</button>
+<h2></h2>

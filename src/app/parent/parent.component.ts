@@ -13,7 +13,10 @@ export class ParentComponent implements OnInit {
   }
   parentName: string = "i am parent";
   childData?:string;
-  addItem(newItem: string) {
+
+  // items = ['item1', 'item2', 'item3', 'item4'];
+
+  addToChild(newItem: string) {
     this.childData = newItem;
   }
 }
