@@ -8,11 +8,13 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './parent/child/child.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DirPipeComponent } from './dir-pipe/dir-pipe.component';
 @NgModule({
   declarations: [
     AppComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    DirPipeComponent
   ],
   imports: [
     BrowserModule, 

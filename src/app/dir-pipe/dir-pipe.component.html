@@ -1,0 +1,29 @@
+<p>dir-pipe works!</p>
+<h1>{{todayDate | date:'dd/mm/yyyy'}}</h1>
+<button (click)="this.booleanVar=!this.booleanVar">toggle</button>
+    {{booleanVar}}
+<h1 *ngIf="booleanVar">{{todayDate | date:'hh:mm:ss'}}</h1>
+
+<label for="currencyCode">enter currency code</label>
+<input type="text" id="currencyCode" #inputvalue>
+
+<button (click)="onClick(inputvalue.value)">CHANGE</button>
+
+<table>
+    <tr>
+        <th>index</th>
+        <th>name</th>
+        <th>age</th>
+        <th>eyeColor</th>
+        <th>email</th>
+        <th>balance</th>
+    </tr>
+    <tr *ngFor="let data of hundOfData">
+        <td>{{data.index}}</td>
+        <td>{{data.name}}</td>
+        <td>{{data.age}}</td>
+        <td>{{data.eyeColor}}</td>
+        <td>{{data.email}}</td>
+        <td>{{data.balance | currency:currencycode}}</td>
+    </tr>
+</table>
