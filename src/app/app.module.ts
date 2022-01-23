@@ -8,13 +8,18 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './parent/child/child.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DirPipeComponent } from './dir-pipe/dir-pipe.component';
+import { DirPipeComponent} from './dir-pipe/dir-pipe.component';
+import { CusotmedirDirective } from './dir-pipe/cusotmedir.directive';
+import { FirstcapitalPipe } from './dir-pipe/firstcapital.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
     ParentComponent,
     ChildComponent,
-    DirPipeComponent
+    DirPipeComponent,
+    CusotmedirDirective,
+    FirstcapitalPipe
   ],
   imports: [
     BrowserModule, 

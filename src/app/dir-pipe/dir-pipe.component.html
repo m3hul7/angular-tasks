@@ -1,8 +1,8 @@
-<p>dir-pipe works!</p>
+<p appCusotmedir>dir-pipe works!</p>
 <h1>{{todayDate | date:'dd/mm/yyyy'}}</h1>
-<button (click)="this.booleanVar=!this.booleanVar">toggle</button>
-    {{booleanVar}}
+
 <h1 *ngIf="booleanVar">{{todayDate | date:'hh:mm:ss'}}</h1>
+<button (click)="this.booleanVar=!this.booleanVar">toggle</button>
 
 <label for="currencyCode">enter currency code</label>
 <input type="text" id="currencyCode" #inputvalue>
@@ -18,11 +18,11 @@
         <th>email</th>
         <th>balance</th>
     </tr>
-    <tr *ngFor="let data of hundOfData">
+    <tr *ngFor="let data of hundOfData" >
         <td>{{data.index}}</td>
-        <td>{{data.name}}</td>
+        <td appCusotmedir>{{data.name}}</td>
         <td>{{data.age}}</td>
-        <td>{{data.eyeColor}}</td>
+        <td>{{data.eyeColor | firstcapital}}</td>
         <td>{{data.email}}</td>
         <td>{{data.balance | currency:currencycode}}</td>
     </tr>

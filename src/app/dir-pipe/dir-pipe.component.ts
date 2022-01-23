@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Directive, ElementRef, OnInit } from '@angular/core';
+import { reduce } from 'rxjs';
 
 @Component({
   selector: 'app-dir-pipe',
@@ -13,6 +14,7 @@ export class DirPipeComponent implements OnInit {
   todayDate = new Date();
 
   constructor() { }
+
 
   onClick(recInputVal:string) {
     this.currencycode = recInputVal.toUpperCase();
@@ -119,6 +121,4 @@ export class DirPipeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-
 }
