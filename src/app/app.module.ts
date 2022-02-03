@@ -11,13 +11,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DirPipeComponent } from './dir-pipe/dir-pipe.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { CoreModule } from './core/core.module';
+import { UserModule } from './user/user.module';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     ParentComponent,
     ChildComponent,
     DirPipeComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+   
   ],
   imports: [
     BrowserModule, 
@@ -25,7 +30,9 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     BrowserAnimationsModule,
     MatTabsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CoreModule,
+    UserModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,4 +3,9 @@
     <mat-tab label="DataBinding"><app-parent></app-parent></mat-tab>
     <mat-tab label="Dir-Pipe"><app-dir-pipe></app-dir-pipe></mat-tab>
 </mat-tab-group> -->
-<router-outlet></router-outlet>
+<!-- <app-sidebar></app-sidebar> -->
+<div style="display:flex; height: 100vh;">
+    <div style="width: 30%; border: 1px solid black"><app-sidebar></app-sidebar></div>
+    
+    <div style="width: 70%;"><router-outlet></router-outlet></div>
+</div>
