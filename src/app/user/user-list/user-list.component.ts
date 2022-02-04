@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Data } from '@angular/router';
+import { DataManipulationService } from '../service/data-manipulation.service';
+
 
 @Component({
   selector: 'app-user-list',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserListComponent implements OnInit {
 
-  constructor() { }
+
+
+  constructor(private myService: DataManipulationService) { }
 
   ngOnInit(): void {
-  }
 
+    
+  }
+  getDaata() {
+    this.myService.getData().subscribe(data =>{
+      console.log(data);
+    } )
+  }
 }
