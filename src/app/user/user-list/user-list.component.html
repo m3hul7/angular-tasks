@@ -1,0 +1,21 @@
+<p>user-list works!</p>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>NAME</th>
+        <th>GENDER</th>
+        <th>EMAIL</th>
+        <th>DOE</th>
+        <th>PHONE</th>
+        <th>ACTION</th>
+    </tr>
+    <tr *ngFor="let user of userList; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{user.fname + " " + user.lname}}</td>
+        <td>{{user.gender}}</td>
+        <td>{{user.date}}</td>
+        <td>{{user.phone}}</td>
+        <td></td>
+    </tr>
+</table>
+<button (click)="getDaata()">GETDATA</button>

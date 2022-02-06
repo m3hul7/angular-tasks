@@ -1,0 +1,56 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "fname": "nnnn",
+      "lname": "jkjk",
+      "email": "kj@jkj.com",
+      "date": "2022-02-09",
+      "phone": 5
+    },
+    {
+      "id": 2,
+      "fname": "nnnn",
+      "lname": "jkjk",
+      "email": "",
+      "gender": "",
+      "date": "",
+      "phone": ""
+    },
+    {
+      "id": 3,
+      "fname": "nnnn",
+      "lname": "jkjk",
+      "email": "kj@jkj.com",
+      "date": "2022-02-09",
+      "phone": 5
+    },
+    {
+      "id": 4,
+      "fname": "nnnn",
+      "lname": "",
+      "email": "",
+      "gender": "",
+      "date": "",
+      "phone": ""
+    },
+    {
+      "id": 5,
+      "fname": "nnnn",
+      "lname": "",
+      "email": "",
+      "gender": "",
+      "date": "",
+      "phone": ""
+    },
+    {
+      "id": 6,
+      "fname": null,
+      "lname": null,
+      "email": null,
+      "gender": "FeMale",
+      "date": null,
+      "phone": null
+    }
+  ]
+}

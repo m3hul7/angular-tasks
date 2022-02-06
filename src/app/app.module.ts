@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {MatTabsModule} from '@angular/material/tabs';
 import { ParentComponent } from './parent/parent.component';
@@ -11,6 +11,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DirPipeComponent} from './dir-pipe/dir-pipe.component';
 import { CusotmedirDirective } from './dir-pipe/cusotmedir.directive';
 import { FirstcapitalPipe } from './dir-pipe/firstcapital.pipe';
+import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { CoreModule } from './core/core.module';
+import { UserModule } from './user/user.module';
+
+
 
 @NgModule({
   declarations: [
@@ -19,15 +25,20 @@ import { FirstcapitalPipe } from './dir-pipe/firstcapital.pipe';
     ChildComponent,
     DirPipeComponent,
     CusotmedirDirective,
-    FirstcapitalPipe
+    FirstcapitalPipe,
+    ReactiveFormComponent,
+   
   ],
   imports: [
     BrowserModule, 
     FormsModule, 
     BrowserAnimationsModule,
-    MatTabsModule
+    MatTabsModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    CoreModule,
+    UserModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
