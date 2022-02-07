@@ -1,56 +1,27 @@
 {
   "posts": [
     {
+      "id": 2,
+      "fname": "fdf",
+      "lname": "swswsw",
+      "email": "m3hul7@gmail.com",
+      "gender": "Male",
+      "date": "",
+      "phone": "1023099199"
+    }
+  ],
+  "departments": [
+    {
       "id": 1,
-      "fname": "nnnn",
-      "lname": "jkjk",
-      "email": "kj@jkj.com",
-      "date": "2022-02-09",
-      "phone": 5
+      "dname": "nuclear physics"
     },
     {
       "id": 2,
-      "fname": "nnnn",
-      "lname": "jkjk",
-      "email": "",
-      "gender": "",
-      "date": "",
-      "phone": ""
+      "dname": "rocket science"
     },
     {
       "id": 3,
-      "fname": "nnnn",
-      "lname": "jkjk",
-      "email": "kj@jkj.com",
-      "date": "2022-02-09",
-      "phone": 5
-    },
-    {
-      "id": 4,
-      "fname": "nnnn",
-      "lname": "",
-      "email": "",
-      "gender": "",
-      "date": "",
-      "phone": ""
-    },
-    {
-      "id": 5,
-      "fname": "nnnn",
-      "lname": "",
-      "email": "",
-      "gender": "",
-      "date": "",
-      "phone": ""
-    },
-    {
-      "id": 6,
-      "fname": null,
-      "lname": null,
-      "email": null,
-      "gender": "FeMale",
-      "date": null,
-      "phone": null
+      "dname": "applied mathematics"
     }
   ]
 }
