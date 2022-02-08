@@ -1,0 +1,27 @@
+.d-flex {
+    display: flex;
+}
+.flex-dir-col {
+    flex-direction: column;
+}
+.container {
+    width: 100%;
+}
+.align-center {
+    align-items: center;
+}
+.above-form {
+    width: 100%;
+    justify-content: flex-end;
+}
+.btn {
+    border-style: none;
+	border: 1px solid grey;
+	padding: 20px;
+	color: black;
+	background-color: white;
+	cursor: pointer;
+}
+.form-style {
+    width: 100%;
+}

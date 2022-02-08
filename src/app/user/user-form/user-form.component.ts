@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { DataManipulationService } from '../service/data-manipulation.service';
 import { Department } from '../models/model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-form',
@@ -11,14 +11,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UserFormComponent implements OnInit {
   id!:number
-  formvalidcheck!:boolean
-  touched!:boolean
-  dirty!:boolean
   detailForm!:FormGroup;
   department!:Department[];
   editmode:boolean = false
-  constructor( private formBuilder: FormBuilder, private myService: DataManipulationService, private route:ActivatedRoute) { 
+  constructor( private formBuilder: FormBuilder, private myService: DataManipulationService, private route:ActivatedRoute, private router: Router) { 
     this.getDepartmet()
+    // console.log(this.department)
     this.buildUserDetailsForm();
   }
 
@@ -29,7 +27,7 @@ export class UserFormComponent implements OnInit {
     if(!this.editmode) {
       this.myService.getId(this.id).subscribe({
         next: (data) => {this.detailForm.patchValue(data)},
-        error: (e) => {console.log("wrror")
+        error: (e) => {console.log("error")
       }
       })
     }
@@ -44,9 +42,9 @@ export class UserFormComponent implements OnInit {
       fname: ['',[Validators.required]],
       lname: ['',[Validators.required]],
       email: ['',[Validators.required,Validators.email]],
-      gender: [''],
-      date: [''],
-      deparment: [''],
+      gender: ['',[Validators.required]],
+      date: ['',[Validators.required]],
+      deparment: ['',[Validators.required]],
       phone: ['',[Validators.required,Validators.minLength(10),Validators.maxLength(10)]]
     })
   }
@@ -61,7 +59,7 @@ export class UserFormComponent implements OnInit {
       if(this.detailForm.valid) {
         this.myService.createUser(this.detailForm?.value).subscribe({
           next: (result) => {
-            alert("successs");
+            console.log("saved")
           },
         error: (error) => 
         {
@@ -72,7 +70,7 @@ export class UserFormComponent implements OnInit {
       else {
         alert ("invalid form")
       }
-
+      this.router.navigate(['/user/user-list'])
     }
     else {
       if(this.detailForm.valid) {
@@ -103,10 +101,5 @@ export class UserFormComponent implements OnInit {
   }
   resetForm() {
     this.detailForm.reset()
-  }
-  getStatus() {
-    this.formvalidcheck =this.detailForm.valid;
-    this.touched = this.detailForm.controls['fname'].touched
-    this.dirty = this.detailForm.controls['fname'].dirty
   }
 }

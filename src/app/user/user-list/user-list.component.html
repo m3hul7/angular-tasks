@@ -1,34 +1,42 @@
-<label for="user-search">Search by Name: </label>
-	
-<input type="text" id="searchTextId" [(ngModel)]="searchText" name="searchText" placeholder="Search By Name">
-<button routerLink="../user-form"> Add User</button>
-
-<table>
-    <tr>
-        <th>Id</th>
-        <th>NAME</th>
-        <th>GENDER</th>
-        <th>EMAIL</th>
-        <th>Date of Employement</th>
-        <th>Department</th>
-        <th>PHONE</th>
-        <th>ACTION</th>
-    </tr>
-    <tr *ngFor="let user of userList | serachByName:searchText as result; let i=index">
-        <td *ngIf="result.length===0">no result</td>
-        <td>{{i + 1}}</td>
-        <td>{{user.fname + " " + user.lname}}</td>
-        <td>{{user.gender}}</td>
-        <td>{{user.email}}</td>
-        <td>{{user.date}}</td>
-        <td>{{user.deparment | depPipe:departmentArray}}</td>
-        <td>{{user.phone}}</td>
-        <td><button (click)="deleteUser(user.id)">Delete</button>
-            <button (click)="navigateToEdit(user.id)">Edit</button>
+<div class="container">
+    <div class="d-flex flex-dir-col align-center">
+        <div class="d-flex justify-between above-table align-center">
+            <div>
+                <label for="user-search">Search by Name: </label>	
+                <input type="text" id="searchTextId" [(ngModel)]="searchText" name="searchText" placeholder="Search By Name">
+            </div>
+            <div>
+                <button class="btn btn--skew btn-default btn" routerLink="../user-form"> <span>Add User</span></button>
+            </div>
+        </div>
+        <div class="table-style">
+            <table>
+                <tr>
+                    <th>Id</th>
+                    <th>NAME</th>
+                    <th>GENDER</th>
+                    <th>EMAIL</th>
+                    <th>Date of Employement</th>
+                    <th>Department</th>
+                    <th>PHONE</th>
+                    <th>ACTION</th>
+                </tr>
+                <tr *ngFor="let user of userList | serachByName:searchText; let i=index">
+                    <td *ngIf="boolstore">no result</td>
+                    <td>{{i + 1}}</td>
+                    <td>{{user.fname + " " + user.lname}}</td>
+                    <td>{{user.gender}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.date}}</td>
+                    <td>{{user.deparment | depPipe:departmentArray}}</td>
+                    <td>{{user.phone}}</td>
+                    <td><button (click)="deleteUser(user.id)">Delete</button>
+                        <button (click)="navigateToEdit(user.id)">Edit</button>
+                        
+                    </td>
+                </tr>
+            </table>
             
-        </td>
-    </tr>
-</table>
-<!-- <div  *ngIf="result.length == 0 ">
-    no result
-</div> -->
+        </div>
+    </div>    
+</div>

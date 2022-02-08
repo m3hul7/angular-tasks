@@ -1,3 +1,60 @@
-:host{
-    margin: 0 100px;
+.container {
+	width: 100%;
+}
+table { 
+	width: 100%; 
+	border-collapse: collapse; 
+	margin:50px auto;
+	}
+
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+	background: #eee; 
+	}
+
+th { 
+	background: #3498db; 
+	color: white; 
+	font-weight: bold; 
+	}
+
+td, th { 
+	padding: 10px; 
+	border: 1px solid #ccc; 
+	text-align: left; 
+	font-size: 18px;
+	}
+
+.d-flex {
+	display: flex;
+}
+.flex-dir-col {
+	flex-direction: column;
+}
+.justify-between {
+	justify-content: space-between;
+}
+.align-center {
+	align-items: center;
+}
+.above-table {
+
+	width: 100%;
+}
+.table-style {
+	width: 100%;
+}
+.btn {
+	border-style: none;
+	border: 1px solid grey;
+	padding: 20px;
+	color: black;
+	background-color: white;
+	cursor: pointer;
+}
+#searchTextId {
+	width: 600px;
+	height: 30px;
+	margin-left: 20px;
+
 }

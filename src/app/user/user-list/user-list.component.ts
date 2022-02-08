@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SerachByNamePipe } from '../pipes/serach-by-name.pipe';
 
 import { DataManipulationService } from '../service/data-manipulation.service';
 import { Department, UserDetails } from './../models/model'
@@ -15,14 +16,24 @@ export class UserListComponent implements OnInit {
   userList!: UserDetails[];
   searchText:string = ''
   departmentArray: Department[] = []
-  constructor(private myService: DataManipulationService, private router: Router) {
+  checkarray:UserDetails[] = []
+  boolstore?:boolean
+  constructor(private myService: DataManipulationService, private router: Router, private pipe:SerachByNamePipe) {
     this.getDeparment()
    }
 
   ngOnInit(): void {
     this.getDaata();
   }
-
+  
+  checkEmptyArray() {
+    this.checkarray= this.pipe.transform(this.userList, this.searchText)
+    if(this.checkarray.length == 0){
+       this.boolstore = true
+    }
+    else
+    this.boolstore = false
+  }
   getDeparment() {
     this.myService.getDepartment().subscribe({
       next: (data) => {

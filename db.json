@@ -57,7 +57,7 @@
       "email": "m3hul7@gmail.com",
       "gender": "Male",
       "date": "2022-02-18",
-      "deparment": null,
+      "deparment": "2",
       "phone": "1212121221"
     },
     {
@@ -67,7 +67,7 @@
       "email": "m3hul7@gmail.com",
       "gender": "Male",
       "date": "2022-02-12",
-      "deparment": "",
+      "deparment": "3",
       "phone": "1023099199"
     },
     {
@@ -77,7 +77,7 @@
       "email": "m3hul7@gmail.com",
       "gender": "Male",
       "date": "2022-02-26",
-      "deparment": "",
+      "deparment": "1",
       "phone": "1212121221"
     },
     {
@@ -99,6 +99,16 @@
       "date": "2022-02-11",
       "deparment": "2",
       "phone": "1212121221"
+    },
+    {
+      "id": 13,
+      "fname": "john",
+      "lname": "wick",
+      "email": "johnwick@loves.dog",
+      "gender": "Male",
+      "date": "2022-02-01",
+      "deparment": "1",
+      "phone": "1101000100"
     }
   ],
   "department": [
