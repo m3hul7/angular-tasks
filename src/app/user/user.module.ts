@@ -2,25 +2,32 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { UserRoutingModule } from './user-routing.module';
-import { UserComponent } from './user.component';
+
 import { UserListComponent } from './user-list/user-list.component';
 import { UserFormComponent } from './user-form/user-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataManipulationService } from './service/data-manipulation.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SerachByNamePipe } from './pipes/serach-by-name.pipe';
+import { DepPipePipe } from './pipes/dep-pipe.pipe';
+
 
 
 @NgModule({
   declarations: [
-    UserComponent,
+   
     UserListComponent,
-    UserFormComponent
+    UserFormComponent,
+    SerachByNamePipe,
+    DepPipePipe,
+    
   ],
   imports: [
     CommonModule,
     UserRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   exports:[
     UserListComponent

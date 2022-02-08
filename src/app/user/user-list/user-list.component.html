@@ -1,25 +1,34 @@
-<p>user-list works!</p>
-<table class="table">
+<label for="user-search">Search by Name: </label>
+	
+<input type="text" id="searchTextId" [(ngModel)]="searchText" name="searchText" placeholder="Search By Name">
+<button routerLink="../user-form"> Add User</button>
+
+<table *ngIf = "(userList | serachByName:searchText) as result">
     <tr>
         <th>Id</th>
         <th>NAME</th>
         <th>GENDER</th>
         <th>EMAIL</th>
-        <th>DOE</th>
+        <th>Date of Employement</th>
+        <th>Department</th>
         <th>PHONE</th>
         <th>ACTION</th>
     </tr>
-    <tr *ngFor="let user of userList; let i=index">
-        <td>{{user.id}}</td>
+    <tr *ngFor="let user of userList | serachByName:searchText as result; let i=index">
+        <td *ngIf="result.length===0">no result</td>
+        <td>{{i + 1}}</td>
         <td>{{user.fname + " " + user.lname}}</td>
         <td>{{user.gender}}</td>
         <td>{{user.email}}</td>
         <td>{{user.date}}</td>
+        <td>{{user.deparment | depPipe:departmentArray}}</td>
         <td>{{user.phone}}</td>
         <td><button (click)="deleteUser(user.id)">Delete</button>
-            <a routerLink="../edit/{{user.id}}">edit</a></td>
+            <button (click)="navigateToEdit(user.id)">Edit</button>
+            
+        </td>
     </tr>
 </table>
-<button (click)="getDaata()">GETDATA</button>
-<!-- <button (click)="add()">GETDATA</button>
-<a routerLink="../user-form"> forms</a> -->
+<!-- <div  *ngIf="result.length == 0 ">
+    no result
+</div> -->

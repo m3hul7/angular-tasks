@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validator, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { DataManipulationService } from '../service/data-manipulation.service';
 import { Department } from '../models/model';
 import { ActivatedRoute } from '@angular/router';
@@ -15,7 +15,7 @@ export class UserFormComponent implements OnInit {
   touched!:boolean
   dirty!:boolean
   detailForm!:FormGroup;
-  departments!:Department[];
+  department!:Department[];
   editmode:boolean = false
   constructor( private formBuilder: FormBuilder, private myService: DataManipulationService, private route:ActivatedRoute) { 
     this.getDepartmet()
@@ -41,11 +41,12 @@ export class UserFormComponent implements OnInit {
   buildUserDetailsForm() {
     this.detailForm = this.formBuilder.group({
       id: [],
-      fname: ['nnnn',[Validators.required]],
+      fname: ['',[Validators.required]],
       lname: ['',[Validators.required]],
       email: ['',[Validators.required,Validators.email]],
       gender: [''],
       date: [''],
+      deparment: [''],
       phone: ['',[Validators.required,Validators.minLength(10),Validators.maxLength(10)]]
     })
   }
@@ -94,7 +95,7 @@ export class UserFormComponent implements OnInit {
     this.myService.getDepartment().subscribe( {
       next: (data:Department[]) => {
       console.log(data);
-      this.departments = data
+      this.department = data
     },
     error: (error)=>{
       alert("Somethings Went Wrong");

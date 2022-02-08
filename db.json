@@ -1,16 +1,107 @@
 {
   "posts": [
     {
-      "id": 2,
+      "id": 3,
+      "fname": "fdf",
+      "lname": "fsafd",
+      "email": "m3hul7@gmail.com",
+      "gender": "Male",
+      "date": "2022-02-11",
+      "deparment": "2",
+      "phone": "1212121221"
+    },
+    {
+      "id": 4,
       "fname": "fdf",
       "lname": "swswsw",
       "email": "m3hul7@gmail.com",
       "gender": "Male",
-      "date": "",
+      "date": "2022-02-18",
+      "deparment": "3",
       "phone": "1023099199"
+    },
+    {
+      "id": 5,
+      "fname": "fdf",
+      "lname": "swswsw",
+      "email": "m3hul7@gmail.com",
+      "gender": "Male",
+      "date": "2022-02-10",
+      "deparment": "2",
+      "phone": "1023099199"
+    },
+    {
+      "id": 6,
+      "fname": "fdf",
+      "lname": "fsafd",
+      "email": "m3hul7@gmail.com",
+      "gender": "FeMale",
+      "date": "2022-02-24",
+      "deparment": "1",
+      "phone": "1212121221"
+    },
+    {
+      "id": 7,
+      "fname": "fdf",
+      "lname": "swswsw",
+      "email": "fdfdf@gmail.com",
+      "gender": "FeMale",
+      "date": "2022-02-19",
+      "deparment": "2",
+      "phone": "1023099199"
+    },
+    {
+      "id": 8,
+      "fname": "fdf",
+      "lname": "fsafd",
+      "email": "m3hul7@gmail.com",
+      "gender": "Male",
+      "date": "2022-02-18",
+      "deparment": null,
+      "phone": "1212121221"
+    },
+    {
+      "id": 9,
+      "fname": "fdf",
+      "lname": "swswsw",
+      "email": "m3hul7@gmail.com",
+      "gender": "Male",
+      "date": "2022-02-12",
+      "deparment": "",
+      "phone": "1023099199"
+    },
+    {
+      "id": 10,
+      "fname": "fdf",
+      "lname": "fsafd",
+      "email": "m3hul7@gmail.com",
+      "gender": "Male",
+      "date": "2022-02-26",
+      "deparment": "",
+      "phone": "1212121221"
+    },
+    {
+      "id": 11,
+      "fname": "fdf",
+      "lname": "fsafd",
+      "email": "m3hul7@gmail.com",
+      "gender": "FeMale",
+      "date": "2022-02-26",
+      "deparment": "3",
+      "phone": "1212121221"
+    },
+    {
+      "id": 12,
+      "fname": "mehul",
+      "lname": "swswsw",
+      "email": "m3hul7@gmail.com",
+      "gender": "Male",
+      "date": "2022-02-11",
+      "deparment": "2",
+      "phone": "1212121221"
     }
   ],
-  "departments": [
+  "department": [
     {
       "id": 1,
       "dname": "nuclear physics"

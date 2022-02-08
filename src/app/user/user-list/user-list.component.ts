@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { DataManipulationService } from '../service/data-manipulation.service';
-import { UserDetails } from './../models/model'
+import { Department, UserDetails } from './../models/model'
+
 
 
 @Component({
@@ -11,14 +13,26 @@ import { UserDetails } from './../models/model'
 })
 export class UserListComponent implements OnInit {
   userList!: UserDetails[];
-  
-
-  constructor(private myService: DataManipulationService) { }
+  searchText:string = ''
+  departmentArray: Department[] = []
+  constructor(private myService: DataManipulationService, private router: Router) {
+    this.getDeparment()
+   }
 
   ngOnInit(): void {
-    
+    this.getDaata();
   }
+
+  getDeparment() {
+    this.myService.getDepartment().subscribe({
+      next: (data) => {
+        this.departmentArray = data
+      }
+    })
+  }
+
   getDaata() {
+ 
     this.myService.getData().subscribe( {
       next: (data:UserDetails[]) => {
       // console.log(data);
@@ -38,7 +52,11 @@ export class UserListComponent implements OnInit {
     });
   }
 
-  // editUser(id:number) {
+  navigateToEdit(id:number){
+    this.router.navigate([`../edit/${id}`])
+  }
+
+  // editUser(id:number) { 
   //   this.myService.getId(id).subscribe ({
   //     next: (id) =>  {
   //       console.log(id)

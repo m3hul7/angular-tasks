@@ -6,6 +6,7 @@ export interface UserDetails {
     gender:string
     date:string
     phone:number
+    deparment:number
 }
 export interface Department {
     id:number

@@ -20,7 +20,7 @@ export class DataManipulationService {
       return this.httpService.post<UserDetails>(`${this.apiLink}/posts/`, value)
     }
     getDepartment(): Observable<Department[]> {
-      return this.httpService.get<Department[]>(`${this.apiLink}/departments`)
+      return this.httpService.get<Department[]>(`${this.apiLink}/department`)
     }
 
     deleteUser(id: number): Observable<UserDetails> {

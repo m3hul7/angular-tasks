@@ -1,4 +1,5 @@
-<form class="form-group" *ngIf='detailForm' [formGroup]="detailForm" (ngSubmit)="onSubmit()">
+<button routerLink="/user/user-list"> Back to List</button>
+<form *ngIf='detailForm' [formGroup]="detailForm" (ngSubmit)="onSubmit()">
 
     <label for="fname">First name:</label>
     <input type="text" id="fname" name="firstname" formControlName="fname">
@@ -22,19 +23,13 @@
     <label for="bdate">Date of employement:</label>
     <input type="date" id="date" name="date" formControlName="date"><br>
     <label for="department">Department:</label>
-    <select name="department" id="department">
-        <option *ngFor="let dep of departments" [value]="dep.id">{{dep.dname}}</option>
+    <select name="department" id="department" formControlName="deparment">
+        <option *ngFor="let dep of department" [value]="dep.id">{{dep.dname}}</option>
         
       </select><br>
     <button type="submit" [disabled]="!detailForm.valid">Submit</button>
     <button type="reset"(click)="resetForm()">Reset</button>
     
 </form>
-<div>
-  <button type="reset"(click)="getStatus()">status</button>
-  <div>formvalid {{formvalidcheck}}</div>
-  <div>touched{{touched}}</div>
-  <div>dirty{{dirty}}</div>
-</div>
 
-<!-- <a routerLink="../user-list"> list</a> -->
+
