@@ -3,7 +3,7 @@
 <input type="text" id="searchTextId" [(ngModel)]="searchText" name="searchText" placeholder="Search By Name">
 <button routerLink="../user-form"> Add User</button>
 
-<table *ngIf = "(userList | serachByName:searchText) as result">
+<table>
     <tr>
         <th>Id</th>
         <th>NAME</th>
