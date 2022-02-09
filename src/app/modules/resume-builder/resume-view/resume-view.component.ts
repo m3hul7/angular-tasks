@@ -10,6 +10,7 @@ import { ResumeService } from '../services/resume.service';
 })
 export class ResumeViewComponent implements OnInit {
   retrivedData!:any
+  id!:number
   constructor(private resumeService:ResumeService) { }
 
   ngOnInit(): void {

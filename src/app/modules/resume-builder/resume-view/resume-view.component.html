@@ -33,52 +33,53 @@
           </tr>
 
           <tr>
-              <td rowspan="3" style="width: 200px;  vertical-align: top; padding-top: 20px"><i>Technical</i></td>
-              <td>XHTML</td>
-              <td>Jquery</td>
-              <td>OS X</td>
+              <td rowspan="1" style="width: 200px;  vertical-align: top; padding-top: 20px"><i>Technical</i></td>
+              <td colspan="3">
+                  <table style="width: 100%; display: flex; flex-wrap: wrap;">
+                      <tr style="width: 25%; " *ngFor="let e of retrivedData[0].skills">
+                          <td style="border-bottom:0px;">
+                              {{e.skills}}
+                          </td>
+                      </tr>
+                  </table>
+              </td>
           </tr>
-          <tr>
-              <td>CSS</td>
-              <td>PHP</td>
-              <td>Windows XP/Vista</td>
-          </tr>
-          <tr>
-              <td>JavaScript</td>
-              <td>PHP</td>
-              <td>Windows XP/Vista</td>
-          </tr>
+          
 
           <tr>
-              <td rowspan="2" style="width: 200px;  vertical-align: top;padding-top: 40px;"><i>Experience</i></td>
-              <td colspan="2">
-                  <h2>Facebook</h2>
-                  <p>Senior Interface Designer</p>
-                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel delectus repellat temporibus, sapiente itaque iste nulla consequuntur molestias ipsam ab quo sint tempore fugit consequatur libero ex laboriosam sequi impedit.</p>
+              <td rowspan="1" style="width: 200px;  vertical-align: top;padding-top: 40px;"><i>Experience</i></td>
+              <td colspan="3">
+                  <table style="width: 100%;">
+                      <tr *ngFor="let e of retrivedData[0].experience">
+                          <td style="border-bottom:0px; width: 80%;">
+                            <h2>{{e.place}}</h2>
+                            <p>{{e.designation}}</p>
+                             <p>{{e.description}}</p>
+                          </td>
+                          <td style="border-bottom:0px; vertical-align: top;">{{e.year}}</td>
+                      </tr>
+                  </table>
               </td>
-              <td style="vertical-align: top; text-align: right; padding-top: 40px;">2005-2007</td>
-          </tr>
-
-          <tr>
-              <td colspan="2">
-                  <h2>Apple Inc.</h2>
-                  <p>Senior Interface Designer</p>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia facere, molestiae quaerat, sunt quis ea quidem omnis fugiat fugit error facilis impedit iste accusamus? Consequuntur dolorem eius vel delectus cumque.</p>
-              </td>
-              <td style="vertical-align: top; text-align: right; padding-top: 40px;">2005-2007</td>
+              
           </tr>
 
           <tr>
               <td style="width: 200px;  vertical-align: top; padding-top: 40px;"><i>Education</i></td>
-              <td colspan="3">
-                  <h2>Indiana University</h2>
-                  <p>Dual Major - 4.0 GPA</p>
+              <td colspan="3" >
+                  <table style="width: 100%; display: flex; flex-wrap: wrap;">
+                      <tr style="width: 50%;" *ngFor="let e of retrivedData[0].education">
+                        <td style="border-bottom:0px;">
+                            <h2>{{e.school}}</h2>
+                            <p>{{e.degree}} - {{e.score}}</p>
+                        </td>
+                      </tr>
+                  </table>
               </td>
           </tr>
 
           <tr>
               <td colspan="4" style="text-align: center; border-bottom: 0px; ">
-                  <p>Jonathan Doe - <a href="mailto:name@yourdomain.com" style="color: red;">name@yourdomain.com</a> - (313)-867-5309</p>
+                  <p>{{retrivedData[0].userdetails.name}} - <a href="mailto:name@yourdomain.com" style="color: red;">{{retrivedData[0].userdetails.email}}</a> - {{retrivedData[0].userdetails.phone}}</p>
               </td>
           </tr>
         </table>

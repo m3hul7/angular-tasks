@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SerachByNamePipe } from '../pipes/serach-by-name.pipe';
-
 import { DataManipulationService } from '../service/data-manipulation.service';
 import { Department, UserDetails } from './../models/model'
 
