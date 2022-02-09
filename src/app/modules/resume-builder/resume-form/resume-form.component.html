@@ -1,0 +1,78 @@
+<div>
+    <div>
+        <button><a routerLink="../resume-view">Back to view </a></button>
+    </div>
+    <div>
+        <form [formGroup]="resumeform" (ngSubmit)="onSubmit()">
+            <div formGroupName="userdetails">
+               <div>
+                    <label for="name">Name</label>
+                    <div>
+                        <input type="text" id="name" formControlName="name">
+                    </div>
+               </div>
+               <div>
+                    <label for="designation">Designation</label>
+                    <div>
+                        <input type="text" id="designation" formControlName="designation">
+                    </div>
+                </div>
+                <div>
+                    <label for="email">Electronic mail</label>
+                    <div>
+                        <input type="email" id="email" formControlName="email">
+                    </div>
+                </div>
+                <div>
+                    <label for="phone">Phone number</label>
+                    <div>
+                        <input type="tel" id="phone" formControlName="phone">
+                    </div>
+                </div>
+            </div>
+            <div formArrayName="skills">
+                <label for="skills">Skills</label>
+                <div *ngFor="let control of skills.controls; let i = index">
+                    <div [formGroupName]="i">
+                        <input type="text" id="skills" formControlName="skills">
+                        <button (click)="skills.removeAt(i)">remove skills</button>
+                    </div>
+                </div>
+                <button (click)="addSkills()">add skills</button>
+                
+            </div>
+            <div formArrayName="experience" >
+                <div>
+                    <label for="experience">Experience</label>
+                    <div *ngFor="let control of experience.controls; let i = index">
+                        <div [formGroupName]="i">
+                            <input type="text" id="place" placeholder="place" formControlName="place">
+                            <input type="text" id="designation" placeholder="designation" formControlName="designation">
+                            <input type="text" id="description" placeholder="description" formControlName="description">
+                            <input type="text" id="year" placeholder="year" formControlName="year">
+                            <button (click)="experience.removeAt(i)"> remove experience</button>
+                        </div>
+                    </div>
+                    <button (click)="addExperience()">add experience</button>
+                </div>
+            </div>
+            <div formArrayName="education">
+                <div>
+                    <label for="education">Education</label>
+                    <div *ngFor="let control of education.controls; let i = index">
+                        <div [formGroupName]="i">
+                            <input type="text" id="school" formControlName="school">
+                            <input type="text" id="degree" formControlName="degree">
+                            <input type="text" id="score" formControlName="score">
+                            <button (click)="education.removeAt(i)"> remove education</button>
+                        </div>
+                    </div>
+                    <button (click)="addEducation()">add education</button>
+                </div>
+            </div>
+            <div>
+                <button type="submit">SUBMIT</button>
+            </div>
+        </form>
+    </div>
+</div>

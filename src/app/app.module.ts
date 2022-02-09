@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import {MatTabsModule} from '@angular/material/tabs';
+
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './parent/child/child.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { CoreModule } from './core/core.module';
 import { UserModule } from './user/user.module';
+import { ResumeBuilderModule } from './modules/resume-builder/resume-builder.module';
 
 
 
@@ -33,11 +34,11 @@ import { UserModule } from './user/user.module';
     BrowserModule, 
     FormsModule, 
     BrowserAnimationsModule,
-    MatTabsModule,
     AppRoutingModule,
     ReactiveFormsModule,
     CoreModule,
     UserModule,
+    ResumeBuilderModule
   ],
   bootstrap: [AppComponent]
 })

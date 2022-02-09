@@ -1,0 +1,8 @@
+* {
+    border-collapse: collapse;
+    box-sizing: border-box;
+}
+td {
+    border-bottom: 1px solid grey;
+    padding: 15px 0px; 
+}

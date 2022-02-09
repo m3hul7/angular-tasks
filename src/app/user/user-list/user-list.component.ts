@@ -18,7 +18,7 @@ export class UserListComponent implements OnInit {
   departmentArray: Department[] = []
   checkarray:UserDetails[] = []
   boolstore?:boolean
-  constructor(private myService: DataManipulationService, private router: Router, private pipe:SerachByNamePipe) {
+  constructor(private myService: DataManipulationService, private router: Router) {
     this.getDeparment()
    }
 
@@ -26,14 +26,14 @@ export class UserListComponent implements OnInit {
     this.getDaata();
   }
   
-  checkEmptyArray() {
-    this.checkarray= this.pipe.transform(this.userList, this.searchText)
-    if(this.checkarray.length == 0){
-       this.boolstore = true
-    }
-    else
-    this.boolstore = false
-  }
+  // checkEmptyArray() {
+  //   this.checkarray= this.pipe.transform(this.userList, this.searchText)
+  //   if(this.checkarray.length == 0){
+  //      this.boolstore = true
+  //   }
+  //   else
+  //   this.boolstore = false
+  // }
   getDeparment() {
     this.myService.getDepartment().subscribe({
       next: (data) => {

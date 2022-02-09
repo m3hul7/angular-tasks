@@ -1,4 +1,38 @@
 {
+  "resumePost": [
+    {
+      "userdetails": {
+        "name": "mehul",
+        "designation": "engineer",
+        "email": "mail@mail.org",
+        "phone": "999999999"
+      },
+      "skills": [
+        {
+          "skills": "you name it"
+        },
+        {
+          "skills": "ammunation"
+        }
+      ],
+      "experience": [
+        {
+          "place": "fff",
+          "designation": "ddf",
+          "description": "ff",
+          "year": "dd"
+        }
+      ],
+      "education": [
+        {
+          "school": "dd",
+          "degree": "ddf",
+          "score": "dds"
+        }
+      ],
+      "id": 1
+    }
+  ],
   "posts": [
     {
       "id": 3,
@@ -109,6 +143,16 @@
       "date": "2022-02-01",
       "deparment": "1",
       "phone": "1101000100"
+    },
+    {
+      "id": 14,
+      "fname": "shishil",
+      "lname": "the coder",
+      "email": "hackerman@1rivet.com",
+      "gender": "Male",
+      "date": "1011-01-01",
+      "deparment": "3",
+      "phone": "0000000001"
     }
   ],
   "department": [
