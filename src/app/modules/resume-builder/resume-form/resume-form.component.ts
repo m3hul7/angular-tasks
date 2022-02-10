@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
-import { resumeDetails } from '../models/resume.model';
+import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
 import { ResumeService } from '../services/resume.service';
 
 @Component({
@@ -11,9 +12,9 @@ import { ResumeService } from '../services/resume.service';
 export class ResumeFormComponent implements OnInit {
   resumeform!:FormGroup
 
-  constructor(private fb:FormBuilder, private resumeService:ResumeService) {
+  constructor(private fb:FormBuilder, private resumeService:ResumeService, private router:Router) {
     this.buildForm()
-   }
+  }
 
   ngOnInit(): void {
   }
@@ -21,10 +22,10 @@ export class ResumeFormComponent implements OnInit {
   buildForm() {
     this.resumeform = this.fb.group({
       userdetails: this.fb.group({
-        name: [''],
-        designation: [''],
-        email: [''],
-        phone: [''],
+        name: ['',[Validators.required]],
+        designation: ['',[Validators.required]],
+        email: ['',[Validators.required]],
+        phone: ['',[Validators.required]],
       }),
       skills: this.fb.array([]),
       experience: this.fb.array([]),
@@ -32,23 +33,28 @@ export class ResumeFormComponent implements OnInit {
     })
   }
 
-
+  get resume(){
+    return this.resumeform.controls
+  }
 
   onSubmit() {
     this.resumeService.saveForm(this.resumeform.value).subscribe(
       () => {console.log("success")}
     )
+    this.router.navigate(['/../resume-view'])
   }
   get skills() :FormArray {
     return this.resumeform.get("skills") as FormArray
   }
   newSkills():FormGroup {
     return this.fb.group({
-      skills: ['']
+      skills: ['',[Validators.required]]
     })
+    
   }
   addSkills() {
     this.skills.push(this.newSkills());
+    console.log(this.skills.controls)
   }
 
   get experience() :FormArray {

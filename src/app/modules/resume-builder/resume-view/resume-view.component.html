@@ -1,13 +1,14 @@
 <button><a routerLink="../resume-form">Edit Resume</a></button>
     <section style="margin: 20px auto; max-width: 900px;">
-      <div style="border-top: 2px solid black; border-bottom: 2px solid black; padding: 0px 50px; background-color: rgb(230, 230, 230);">
+      <div *ngIf="retrivedData" style="border-top: 2px solid black; border-bottom: 2px solid black; padding: 0px 50px; background-color: rgb(230, 230, 230);">
+        <!-- {{retrivedData.slice(-1) | json}} -->
         <table style="width: 100%;">
           <tr>
-            <td colspan="3"><h1>{{retrivedData[0].userdetails.name}}</h1><p>{{retrivedData[0].userdetails.designation}}</p></td>
+            <td colspan="3"><h1>{{retrivedData.slice(-1)[0].userdetails.name}}</h1><p>{{retrivedData.slice(-1)[0].userdetails.designation}}</p></td>
             <td>
                 <button>Download PDF</button>
-                <p><a href="mailto:name@yourdomain.com" style="color: red;">{{retrivedData[0].userdetails.email}}</a></p>
-                <p>{{retrivedData[0].userdetails.phone}}</p>
+                <p><a href="mailto:name@yourdomain.com" style="color: red;">{{retrivedData.slice(-1)[0].userdetails.email}}</a></p>
+                <p>{{retrivedData.slice(-1)[0].userdetails.phone}}</p>
             </td>
           </tr>
           
@@ -36,7 +37,7 @@
               <td rowspan="1" style="width: 200px;  vertical-align: top; padding-top: 20px"><i>Technical</i></td>
               <td colspan="3">
                   <table style="width: 100%; display: flex; flex-wrap: wrap;">
-                      <tr style="width: 25%; " *ngFor="let e of retrivedData[0].skills">
+                      <tr style="width: 25%; " *ngFor="let e of retrivedData.slice(-1)[0].skills">
                           <td style="border-bottom:0px;">
                               {{e.skills}}
                           </td>
@@ -50,7 +51,7 @@
               <td rowspan="1" style="width: 200px;  vertical-align: top;padding-top: 40px;"><i>Experience</i></td>
               <td colspan="3">
                   <table style="width: 100%;">
-                      <tr *ngFor="let e of retrivedData[0].experience">
+                      <tr *ngFor="let e of retrivedData.slice(-1)[0].experience">
                           <td style="border-bottom:0px; width: 80%;">
                             <h2>{{e.place}}</h2>
                             <p>{{e.designation}}</p>
@@ -67,7 +68,7 @@
               <td style="width: 200px;  vertical-align: top; padding-top: 40px;"><i>Education</i></td>
               <td colspan="3" >
                   <table style="width: 100%; display: flex; flex-wrap: wrap;">
-                      <tr style="width: 50%;" *ngFor="let e of retrivedData[0].education">
+                      <tr style="width: 50%;" *ngFor="let e of retrivedData.slice(-1)[0].education">
                         <td style="border-bottom:0px;">
                             <h2>{{e.school}}</h2>
                             <p>{{e.degree}} - {{e.score}}</p>
@@ -79,7 +80,7 @@
 
           <tr>
               <td colspan="4" style="text-align: center; border-bottom: 0px; ">
-                  <p>{{retrivedData[0].userdetails.name}} - <a href="mailto:name@yourdomain.com" style="color: red;">{{retrivedData[0].userdetails.email}}</a> - {{retrivedData[0].userdetails.phone}}</p>
+                  <p>{{retrivedData.slice(-1)[0].userdetails.name}} - <a href="mailto:name@yourdomain.com" style="color: red;">{{retrivedData.slice(-1)[0].userdetails.email}}</a> - {{retrivedData[0].userdetails.phone}}</p>
               </td>
           </tr>
         </table>

@@ -1,3 +1,111 @@
-li {
+
+.flex-container {
+    display: flex;
+    height:100%; 
+}
+.flex-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    background-color: white;
+    height: 100vh;
+}
+.polka {
+    height: 50px;
+    border-bottom: 3px solid #f8f8fa;
+    padding-left: 40px;
+    padding-top: 15px;
+}
+.polka a {
+    text-decoration: none;
+    
+}
+.flex-two-nav {
+    display: flex;
+    height: 100%; 
+    flex-direction: column;
+    overflow: auto;
+    justify-content: flex-start;
+}
+.nav{
     list-style-type: none;
+    flex-shrink: 0;
+    padding: 20px;
+    border-bottom: 3px solid #f8f8fa;
+}
+.nav ul li {
+    list-style: none;
+}
+nav a {
+    display: block;
+    text-decoration: none;
+    color: grey;
+    padding: 1rem;
+}
+nav a:hover {
+    color: black;
+    background-color: #f8f8fa;  
+    border-radius: 10px;
+}
+.icon {
+    padding-right: 10px;
+}
+.flex-main-container {
+    width: 100%;
+    background-color: #f8f8fa;
+    border-bottom: 3px solid #f8f8fa;
+    overflow: hidden;
+}
+.flex-header {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 100px;
+}
+.flex-header div {
+    width: 1000px;
+    position: relative;
+    flex-shrink: 0;
+}
+.search-input {
+    text-indent: 20px;
+    padding-right: 50px;
+    border: 1px solid #f8f8fa;
+    width: 100%;
+    height: 35px;
+    border-radius: 5px solid #f8f8fa;
+}
+.icon-search {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.upload-meet-btn {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #18dca1;
+    border: none;
+    color: white;
+    flex-shrink: 0;
+}
+.d-flex {
+    display: flex;
+}
+.align-item-center {
+    align-items: center;   
+} 
+.main-content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: auto;
+}
+.div {
+    width: 100%;
+    flex-shrink: 0;
+    height: 400px;
+    background-color: #18dca1;
 }

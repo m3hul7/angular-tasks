@@ -2,43 +2,49 @@
     <div>
         <button><a routerLink="../resume-view">Back to view </a></button>
     </div>
-    <div>
+    <div style="border: 1px solid black; padding: 20px; width: 500px;">
         <form [formGroup]="resumeform" (ngSubmit)="onSubmit()">
             <div formGroupName="userdetails">
-               <div>
+               <div class="d-flex justify-between">
                     <label for="name">Name</label>
                     <div>
                         <input type="text" id="name" formControlName="name">
+                        <div *ngIf="resumeform.get('userdetails.name')?.touched && resumeform.get('userdetails.name')?.errors?.['required']">This Field is Required</div>
                     </div>
                </div>
-               <div>
+               <div class="d-flex justify-between">
                     <label for="designation">Designation</label>
                     <div>
                         <input type="text" id="designation" formControlName="designation">
+                        <div *ngIf="resumeform.get('userdetails.designation')?.touched && resumeform.get('userdetails.designation')?.errors?.['required']">This Field is Required</div>
                     </div>
                 </div>
-                <div>
+                <div class="d-flex justify-between">
                     <label for="email">Electronic mail</label>
                     <div>
                         <input type="email" id="email" formControlName="email">
+                        <div *ngIf="resumeform.get('userdetails.email')?.touched && resumeform.get('userdetails.email')?.errors?.['required']">This Field is Required</div>
                     </div>
                 </div>
-                <div>
+                <div class="d-flex justify-between">
                     <label for="phone">Phone number</label>
                     <div>
                         <input type="tel" id="phone" formControlName="phone">
+                        <div *ngIf="resumeform.get('userdetails.phone')?.touched && resumeform.get('userdetails.phone')?.errors?.['required']">This Field is Required</div>
                     </div>
                 </div>
             </div>
             <div formArrayName="skills">
+                <!-- <legend>Personalia:</legend> -->
                 <label for="skills">Skills</label>
                 <div *ngFor="let control of skills.controls; let i = index">
                     <div [formGroupName]="i">
                         <input type="text" id="skills" formControlName="skills">
-                        <button (click)="skills.removeAt(i)">remove skills</button>
+                        <button type="button" (click)="skills.removeAt(i)">remove skills</button>
+                        <div *ngIf="control.errors?.['required']">kjfsjfskl</div>
                     </div>
                 </div>
-                <button (click)="addSkills()">add skills</button>
+                <button type="button" (click)="addSkills()">add skills</button>
                 
             </div>
             <div formArrayName="experience" >
@@ -50,10 +56,10 @@
                             <input type="text" id="designation" placeholder="designation" formControlName="designation">
                             <input type="text" id="description" placeholder="description" formControlName="description">
                             <input type="text" id="year" placeholder="year" formControlName="year">
-                            <button (click)="experience.removeAt(i)"> remove experience</button>
+                            <button type="button" (click)="experience.removeAt(i)">remove experience</button>
                         </div>
                     </div>
-                    <button (click)="addExperience()">add experience</button>
+                    <button type="button" (click)="addExperience()">add experience</button>
                 </div>
             </div>
             <div formArrayName="education">
@@ -61,13 +67,13 @@
                     <label for="education">Education</label>
                     <div *ngFor="let control of education.controls; let i = index">
                         <div [formGroupName]="i">
-                            <input type="text" id="school" formControlName="school">
-                            <input type="text" id="degree" formControlName="degree">
-                            <input type="text" id="score" formControlName="score">
-                            <button (click)="education.removeAt(i)"> remove education</button>
+                            <input type="text" id="school" placeholder="school" formControlName="school">
+                            <input type="text" id="degree" placeholder="degree" formControlName="degree">
+                            <input type="text" id="score" placeholder="score" formControlName="score">
+                            <button type="button" (click)="education.removeAt(i)"> remove education</button>
                         </div>
                     </div>
-                    <button (click)="addEducation()">add education</button>
+                    <button type="button" (click)="addEducation()">add education</button>
                 </div>
             </div>
             <div>

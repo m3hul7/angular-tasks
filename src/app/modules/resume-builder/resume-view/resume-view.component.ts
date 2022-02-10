@@ -9,7 +9,7 @@ import { ResumeService } from '../services/resume.service';
   styleUrls: ['./resume-view.component.css']
 })
 export class ResumeViewComponent implements OnInit {
-  retrivedData!:any
+  retrivedData:any
   id!:number
   constructor(private resumeService:ResumeService) { }
 

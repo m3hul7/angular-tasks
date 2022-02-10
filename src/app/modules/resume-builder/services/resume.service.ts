@@ -13,10 +13,10 @@ export class ResumeService {
       this.apiLink= environment.baseURL
     }
 
-  saveForm(resumeData:resumeDetails){
+  saveForm(resumeData:resumeDetails):Observable<resumeDetails>{
     return this.http.post<resumeDetails>(`${this.apiLink}/resumePost`,resumeData);
   }
-  getForm(){
+  getForm():Observable<resumeDetails[]>{
     // debugger
     return this.http.get<resumeDetails[]>(`${this.apiLink}/resumePost`);
   }
