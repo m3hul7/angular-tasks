@@ -1,90 +1,93 @@
-<button><a routerLink="../resume-form">Edit Resume</a></button>
+<div class="container d-flex flex-dir-col">
+    <div class="d-flex justify-between">
+        <div>Resume View</div>
+        <button class="btn" routerLink="../resume-form">Edit</button>
+    </div>
     <section style="margin: 20px auto; max-width: 900px;">
-      <div *ngIf="retrivedData" style="border-top: 2px solid black; border-bottom: 2px solid black; padding: 0px 50px; background-color: rgb(230, 230, 230);">
-        <!-- {{retrivedData.slice(-1) | json}} -->
-        <table style="width: 100%;">
-          <tr>
-            <td colspan="3"><h1>{{retrivedData.slice(-1)[0].userdetails.name}}</h1><p>{{retrivedData.slice(-1)[0].userdetails.designation}}</p></td>
-            <td>
-                <button>Download PDF</button>
-                <p><a href="mailto:name@yourdomain.com" style="color: red;">{{retrivedData.slice(-1)[0].userdetails.email}}</a></p>
-                <p>{{retrivedData.slice(-1)[0].userdetails.phone}}</p>
-            </td>
-          </tr>
-          
-          <tr>
-              <td style="width: 200px; vertical-align: top;"><i>Profile</i></td>
-              <td colspan="3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, ad corporis. Eius eligendi optio, autem sed ducimus, corrupti voluptatibus temporibus delectus architecto, aperiam consequatur alias omnis quia nam iste ullam?</td>
-          </tr>
-
-          <tr>
-              <td style="width: 200px;  vertical-align: top; padding-top: 40px;"><i>Skills</i></td>
-              <td style="vertical-align: top; width: 25%; padding-right: 10px;">
-                  <h2>Web Design</h2>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea earum voluptatem cupiditate necessitatibus at ad molestiae quisquam est?</p>
+        <div *ngIf="retrivedData" style="border-top: 2px solid black; border-bottom: 2px solid black; padding: 0px 50px; background-color: rgb(230, 230, 230);">
+          <!-- {{retrivedData.slice(-1) | json}} -->
+          <table style="width: 100%;">
+            <tr>
+              <td colspan="3"><h1>{{retrivedData.slice(-1)[0].userdetails.name}}</h1><p>{{retrivedData.slice(-1)[0].userdetails.designation}}</p></td>
+              <td>
+                  <button>Download PDF</button>
+                  <p><a href="mailto:name@yourdomain.com" style="color: red;">{{retrivedData.slice(-1)[0].userdetails.email}}</a></p>
+                  <p>{{retrivedData.slice(-1)[0].userdetails.phone}}</p>
               </td>
-              <td style="vertical-align: top; width: 25%; padding-right: 10px;">
-                  <h2>Interface Design</h2>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea earum voluptatem cupiditate necessitatibus at ad molestiae quisquam est?</p>
-              </td>
-              <td style="vertical-align: top;">
-                  <h2>Project Direction</h2>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea earum voluptatem cupiditate necessitatibus at ad molestiae quisquam est?</p>
-              </td>
-          </tr>
-
-          <tr>
-              <td rowspan="1" style="width: 200px;  vertical-align: top; padding-top: 20px"><i>Technical</i></td>
-              <td colspan="3">
-                  <table style="width: 100%; display: flex; flex-wrap: wrap;">
-                      <tr style="width: 25%; " *ngFor="let e of retrivedData.slice(-1)[0].skills">
+            </tr>
+            
+            <tr>
+                <td style="width: 200px; vertical-align: top;"><i>Profile</i></td>
+                <td colspan="3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, ad corporis. Eius eligendi optio, autem sed ducimus, corrupti voluptatibus temporibus delectus architecto, aperiam consequatur alias omnis quia nam iste ullam?</td>
+            </tr>
+  
+            <tr>
+                <td style="width: 200px;  vertical-align: top; padding-top: 40px;"><i>Skills</i></td>
+                <td style="vertical-align: top; width: 25%; padding-right: 10px;">
+                    <h2>Web Design</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea earum voluptatem cupiditate necessitatibus at ad molestiae quisquam est?</p>
+                </td>
+                <td style="vertical-align: top; width: 25%; padding-right: 10px;">
+                    <h2>Interface Design</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea earum voluptatem cupiditate necessitatibus at ad molestiae quisquam est?</p>
+                </td>
+                <td style="vertical-align: top; width: 25%">
+                    <h2>Project Direction</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea earum voluptatem cupiditate necessitatibus at ad molestiae quisquam est?</p>
+                </td>
+            </tr>
+  
+            <tr>
+                <td rowspan="1" style="width: 200px;  vertical-align: top; padding-top: 20px"><i>Technical</i></td>
+                <td colspan="3">
+                    <table style="width: 100%; display: flex; flex-wrap: wrap;">
+                        <tr style="width: 25%; " *ngFor="let e of retrivedData.slice(-1)[0].skills">
+                            <td style="border-bottom:0px;">
+                                {{e.skills}}
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+  
+            <tr>
+                <td rowspan="1" style="width: 200px;  vertical-align: top;padding-top: 40px;"><i>Experience</i></td>
+                <td colspan="3">
+                    <table style="width: 100%;">
+                        <tr *ngFor="let e of retrivedData.slice(-1)[0].experience">
+                            <td style="border-bottom:0px; width: 80%;">
+                              <h2>{{e.place}}</h2>
+                              <p>{{e.designation}}</p>
+                               <p>{{e.description}}</p>
+                            </td>
+                            <td style="border-bottom:0px; vertical-align: top;">{{e.year}}</td>
+                        </tr>
+                    </table>
+                </td>
+                
+            </tr>
+  
+            <tr>
+                <td style="width: 200px;  vertical-align: top; padding-top: 40px;"><i>Education</i></td>
+                <td colspan="3" >
+                    <table style="width: 100%; display: flex; flex-wrap: wrap;">
+                        <tr style="width: 50%;" *ngFor="let e of retrivedData.slice(-1)[0].education">
                           <td style="border-bottom:0px;">
-                              {{e.skills}}
+                              <h2>{{e.school}}</h2>
+                              <p>{{e.degree}} - {{e.score}}</p>
                           </td>
-                      </tr>
-                  </table>
-              </td>
-          </tr>
-          
-
-          <tr>
-              <td rowspan="1" style="width: 200px;  vertical-align: top;padding-top: 40px;"><i>Experience</i></td>
-              <td colspan="3">
-                  <table style="width: 100%;">
-                      <tr *ngFor="let e of retrivedData.slice(-1)[0].experience">
-                          <td style="border-bottom:0px; width: 80%;">
-                            <h2>{{e.place}}</h2>
-                            <p>{{e.designation}}</p>
-                             <p>{{e.description}}</p>
-                          </td>
-                          <td style="border-bottom:0px; vertical-align: top;">{{e.year}}</td>
-                      </tr>
-                  </table>
-              </td>
-              
-          </tr>
-
-          <tr>
-              <td style="width: 200px;  vertical-align: top; padding-top: 40px;"><i>Education</i></td>
-              <td colspan="3" >
-                  <table style="width: 100%; display: flex; flex-wrap: wrap;">
-                      <tr style="width: 50%;" *ngFor="let e of retrivedData.slice(-1)[0].education">
-                        <td style="border-bottom:0px;">
-                            <h2>{{e.school}}</h2>
-                            <p>{{e.degree}} - {{e.score}}</p>
-                        </td>
-                      </tr>
-                  </table>
-              </td>
-          </tr>
-
-          <tr>
-              <td colspan="4" style="text-align: center; border-bottom: 0px; ">
-                  <p>{{retrivedData.slice(-1)[0].userdetails.name}} - <a href="mailto:name@yourdomain.com" style="color: red;">{{retrivedData.slice(-1)[0].userdetails.email}}</a> - {{retrivedData[0].userdetails.phone}}</p>
-              </td>
-          </tr>
-        </table>
-      </div>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+  
+            <tr>
+                <td colspan="4" style="text-align: center; border-bottom: 0px; ">
+                    <p>{{retrivedData.slice(-1)[0].userdetails.name}} - <a href="mailto:name@yourdomain.com" style="color: red;">{{retrivedData.slice(-1)[0].userdetails.email}}</a> - {{retrivedData[0].userdetails.phone}}</p>
+                </td>
+            </tr>
+          </table>
+        </div>
     </section>
-
-
+</div>

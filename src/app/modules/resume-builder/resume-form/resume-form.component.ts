@@ -27,9 +27,9 @@ export class ResumeFormComponent implements OnInit {
         email: ['',[Validators.required]],
         phone: ['',[Validators.required]],
       }),
-      skills: this.fb.array([]),
-      experience: this.fb.array([]),
-      education: this.fb.array([])
+      skills: this.fb.array([this.newSkills()]),
+      experience: this.fb.array([this.newExperience()]),
+      education: this.fb.array([this.newEducation()])
     })
   }
 

@@ -1,25 +1,27 @@
 <div class="container">
-    <div class="d-flex flex-dir-col align-center">
+    <div class="d-flex flex-dir-col">
+        <div>
+            <span>User Table</span>
+        </div>
         <div class="d-flex justify-between above-table align-center">
             <div>
-                <label for="user-search">Search by Name: </label>	
-                <input type="text" id="searchTextId" [(ngModel)]="searchText" name="searchText" placeholder="Search By Name">
+                <input type="text" id="searchTextId" [(ngModel)]="searchText" name="searchUser" placeholder="Search">
             </div>
             <div>
-                <button class="btn btn--skew btn-default btn" routerLink="../user-form"> <span>Add User</span></button>
+                <button class="btn btn-add" routerLink="../user-form"> <span> + Add User</span></button>
             </div>
         </div>
-        <div class="table-style">
+        <div class="table-style d-flex">
             <table>
                 <tr>
-                    <th>Id</th>
-                    <th>NAME</th>
-                    <th>GENDER</th>
-                    <th>EMAIL</th>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Electronic Mail</th>
                     <th>Date of Employement</th>
                     <th>Department</th>
-                    <th>PHONE</th>
-                    <th>ACTION</th>
+                    <th>Phone Number</th>
+                    <th>Action</th>
                 </tr>
                 <tr *ngFor="let user of userList | serachByName:searchText; let i=index">
                     <td *ngIf="boolstore">no result</td>
@@ -30,8 +32,8 @@
                     <td>{{user.date}}</td>
                     <td>{{user.deparment | depPipe:departmentArray}}</td>
                     <td>{{user.phone}}</td>
-                    <td><button (click)="deleteUser(user.id)">Delete</button>
-                        <button (click)="navigateToEdit(user.id)">Edit</button>
+                    <td><button class="btn btn-action btn-red" (click)="deleteUser(user.id)">Delete</button>
+                        <button class="btn btn-action btn-green" (click)="navigateToEdit(user.id)">Edit</button>
                         
                     </td>
                 </tr>

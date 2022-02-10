@@ -105,109 +105,129 @@
   ],
   "posts": [
     {
-      "id": 3,
-      "fname": "fdf",
-      "lname": "fsafd",
-      "email": "m3hul7@gmail.com",
+      "id": 1,
+      "fname": "John",
+      "lname": "Wick",
+      "email": "johnwick@loves.dog",
       "gender": "Male",
-      "date": "2022-02-11",
-      "deparment": "2",
-      "phone": "1212121221"
+      "date": "2022-02-01",
+      "deparment": "1",
+      "phone": "1101000100"
+    },
+    {
+      "id": 2,
+      "fname": "John",
+      "lname": "Wick",
+      "email": "johnwick@loves.dog",
+      "gender": "Male",
+      "date": "2022-02-01",
+      "deparment": "1",
+      "phone": "1101000100"
+    },
+    {
+      "id": 3,
+      "fname": "John",
+      "lname": "Wick",
+      "email": "johnwick@loves.dog",
+      "gender": "Male",
+      "date": "2022-02-01",
+      "deparment": "1",
+      "phone": "1101000100"
     },
     {
       "id": 4,
-      "fname": "fdf",
-      "lname": "swswsw",
-      "email": "m3hul7@gmail.com",
+      "fname": "John",
+      "lname": "Wick",
+      "email": "johnwick@loves.dog",
       "gender": "Male",
-      "date": "2022-02-18",
-      "deparment": "3",
-      "phone": "1023099199"
+      "date": "2022-02-01",
+      "deparment": "1",
+      "phone": "1101000100"
     },
     {
       "id": 5,
-      "fname": "fdf",
-      "lname": "swswsw",
-      "email": "m3hul7@gmail.com",
+      "fname": "John",
+      "lname": "Wick",
+      "email": "johnwick@loves.dog",
       "gender": "Male",
-      "date": "2022-02-10",
-      "deparment": "2",
-      "phone": "1023099199"
+      "date": "2022-02-01",
+      "deparment": "1",
+      "phone": "1101000100"
     },
     {
       "id": 6,
-      "fname": "fdf",
-      "lname": "fsafd",
-      "email": "m3hul7@gmail.com",
-      "gender": "FeMale",
-      "date": "2022-02-24",
+      "fname": "John",
+      "lname": "Wick",
+      "email": "johnwick@loves.dog",
+      "gender": "Male",
+      "date": "2022-02-01",
       "deparment": "1",
-      "phone": "1212121221"
+      "phone": "1101000100"
     },
     {
       "id": 7,
-      "fname": "fdf",
-      "lname": "swswsw",
-      "email": "fdfdf@gmail.com",
-      "gender": "FeMale",
-      "date": "2022-02-19",
-      "deparment": "2",
-      "phone": "1023099199"
+      "fname": "John",
+      "lname": "Wick",
+      "email": "johnwick@loves.dog",
+      "gender": "Male",
+      "date": "2022-02-01",
+      "deparment": "1",
+      "phone": "1101000100"
     },
     {
       "id": 8,
-      "fname": "fdf",
-      "lname": "fsafd",
-      "email": "m3hul7@gmail.com",
+      "fname": "John",
+      "lname": "Wick",
+      "email": "johnwick@loves.dog",
       "gender": "Male",
-      "date": "2022-02-18",
-      "deparment": "2",
-      "phone": "1212121221"
+      "date": "2022-02-01",
+      "deparment": "1",
+      "phone": "1101000100"
     },
     {
       "id": 9,
-      "fname": "fdf",
-      "lname": "swswsw",
-      "email": "m3hul7@gmail.com",
+      "fname": "John",
+      "lname": "Wick",
+      "email": "johnwick@loves.dog",
       "gender": "Male",
-      "date": "2022-02-12",
-      "deparment": "3",
-      "phone": "1023099199"
+      "date": "2022-02-01",
+      "deparment": "1",
+      "phone": "1101000100"
     },
     {
       "id": 10,
-      "fname": "fdf",
-      "lname": "fsafd",
-      "email": "m3hul7@gmail.com",
+      "fname": "John",
+      "lname": "Wick",
+      "email": "johnwick@loves.dog",
       "gender": "Male",
-      "date": "2022-02-26",
+      "date": "2022-02-01",
       "deparment": "1",
-      "phone": "1212121221"
+      "phone": "1101000100"
     },
     {
       "id": 11,
-      "fname": "fdf",
-      "lname": "fsafd",
-      "email": "m3hul7@gmail.com",
-      "gender": "FeMale",
-      "date": "2022-02-26",
-      "deparment": "3",
-      "phone": "1212121221"
+      "fname": "John",
+      "lname": "Wick",
+      "email": "johnwick@loves.dog",
+      "gender": "Male",
+      "date": "2022-02-01",
+      "deparment": "1",
+      "phone": "1101000100"
     },
     {
       "id": 12,
-      "fname": "mehul",
-      "lname": "swswsw",
-      "email": "m3hul7@gmail.com",
+      "fname": "John",
+      "lname": "Wick",
+      "email": "johnwick@loves.dog",
       "gender": "Male",
-      "date": "2022-02-11",
-      "deparment": "2",
-      "phone": "1212121221"
+      "date": "2022-02-01",
+      "deparment": "1",
+      "phone": "1101000100"
     },
     {
       "id": 13,
-      "fname": "john",
-      "lname": "wick",
+      "fname": "John",
+      "lname": "Wick",
       "email": "johnwick@loves.dog",
       "gender": "Male",
       "date": "2022-02-01",
@@ -216,27 +236,37 @@
     },
     {
       "id": 14,
-      "fname": "shishil",
-      "lname": "the coder",
-      "email": "hackerman@1rivet.com",
+      "fname": "John",
+      "lname": "Wick",
+      "email": "johnwick@loves.dog",
       "gender": "Male",
-      "date": "1011-01-01",
-      "deparment": "3",
-      "phone": "0000000001"
+      "date": "2022-02-01",
+      "deparment": "1",
+      "phone": "1101000100"
+    },
+    {
+      "id": 15,
+      "fname": "John",
+      "lname": "Wick",
+      "email": "johnwick@loves.dog",
+      "gender": "Male",
+      "date": "2022-02-01",
+      "deparment": "1",
+      "phone": "1101000100"
     }
   ],
   "department": [
     {
       "id": 1,
-      "dname": "nuclear physics"
+      "dname": "Nuclear Physics"
     },
     {
       "id": 2,
-      "dname": "rocket science"
+      "dname": "Rocket Science"
     },
     {
       "id": 3,
-      "dname": "applied mathematics"
+      "dname": "Applied Mathematics"
     }
   ]
 }
