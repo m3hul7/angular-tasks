@@ -101,6 +101,35 @@
         }
       ],
       "id": 16
+    },
+    {
+      "userdetails": {
+        "name": "",
+        "designation": "",
+        "email": "",
+        "phone": ""
+      },
+      "skills": [
+        {
+          "skills": ""
+        }
+      ],
+      "experience": [
+        {
+          "place": "",
+          "designation": "",
+          "description": "",
+          "year": ""
+        }
+      ],
+      "education": [
+        {
+          "school": "",
+          "degree": "",
+          "score": ""
+        }
+      ],
+      "id": 17
     }
   ],
   "posts": [

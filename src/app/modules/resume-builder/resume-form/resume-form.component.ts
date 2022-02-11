@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormArray, Validators, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { ResumeService } from '../services/resume.service';
@@ -37,6 +37,10 @@ export class ResumeFormComponent implements OnInit {
     return this.resumeform.controls
   }
 
+  getAsFG(ac:AbstractControl): FormGroup {
+    return ac as FormGroup
+  }
+
   onSubmit() {
     this.resumeService.saveForm(this.resumeform.value).subscribe(
       () => {console.log("success")}
@@ -62,10 +66,10 @@ export class ResumeFormComponent implements OnInit {
   }
   newExperience():FormGroup {
     return this.fb.group({
-      place: [''],
-      designation: [''],
-      description: [''],
-      year: ['']
+      place: ['',[Validators.required]],
+      designation: ['',[Validators.required]],
+      description: ['',[Validators.required]],
+      year: ['',[Validators.required]]
     })
   }
   addExperience() {
@@ -77,9 +81,9 @@ export class ResumeFormComponent implements OnInit {
   }
   newEducation():FormGroup {
     return this.fb.group({
-      school: [''],
-      degree: [''],
-      score: ['']
+      school: ['',[Validators.required]],
+      degree: ['',[Validators.required]],
+      score: ['',[Validators.required]]
     })
   }
   addEducation() {

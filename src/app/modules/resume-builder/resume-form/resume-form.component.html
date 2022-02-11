@@ -3,84 +3,93 @@
         <div>Resume Form</div>
         <div><button class="btn" routerLink="../resume-view">Back to View</button></div>
     </div>
-    <div class="form-style">
+    <div class="form-style d-flex">
         <form [formGroup]="resumeform" (ngSubmit)="onSubmit()">
-            <div formGroupName="userdetails">
-               <div>
-                    <label for="name">Name</label>
+            <fieldset>
+                <legend>Resume Form</legend>
+                <div formGroupName="userdetails">
                     <div>
-                        <input type="text" id="name" placeholder="Enter Full Name" formControlName="name">
-                        <div *ngIf="resumeform.get('userdetails.name')?.touched && resumeform.get('userdetails.name')?.errors?.['required']">This Field is Required</div>
+                         <label for="name">Name</label>
+                         <div>
+                             <input type="text" id="name" placeholder="Enter Full Name" formControlName="name">
+                             <div [ngClass]="'danger'" *ngIf="resumeform.get('userdetails.name')?.touched && resumeform.get('userdetails.name')?.errors?.['required']">This Field is Required</div>
+                         </div>
                     </div>
-               </div>
-               <div>
-                    <label for="designation">Designation</label>
                     <div>
-                        <input type="text" id="designation" placeholder="Enter Designation" formControlName="designation">
-                        <div *ngIf="resumeform.get('userdetails.designation')?.touched && resumeform.get('userdetails.designation')?.errors?.['required']">This Field is Required</div>
-                    </div>
-                </div>
-                <div>
-                    <label for="email">Electronic mail</label>
-                    <div>
-                        <input type="email" id="email" placeholder="Enter Email" formControlName="email">
-                        <div *ngIf="resumeform.get('userdetails.email')?.touched && resumeform.get('userdetails.email')?.errors?.['required']">This Field is Required</div>
-                    </div>
-                </div>
-                <div>
-                    <label for="phone">Phone number</label>
-                    <div>
-                        <input type="tel" id="phone" placeholder="Enter Phone Number" formControlName="phone">
-                        <div *ngIf="resumeform.get('userdetails.phone')?.touched && resumeform.get('userdetails.phone')?.errors?.['required']">This Field is Required</div>
-                    </div>
-                </div>
-            </div>
-            <div formArrayName="skills">
-                <!-- <legend>Personalia:</legend> -->
-                <label for="skills">Skills</label>
-                <div *ngFor="let control of skills.controls; let i = index">
-                    <div [formGroupName]="i">
-                        <input type="text" id="skills" placeholder="Enter your Skill" formControlName="skills">
-                        <button class="add-remove" type="button" (click)="skills.removeAt(i)">-</button>
-                        <!-- <div *ngIf="control.errors?.['required']">kjfsjfskl</div> -->
-                    </div>
-                </div>
-                <button class="add-remove" type="button" (click)="addSkills()">+</button>
-                
-            </div>
-            <div formArrayName="experience" >
-                <div>
-                    <label for="experience">Experience</label>
-                    <div *ngFor="let control of experience.controls; let i = index">
-                        <div [formGroupName]="i">
-                            <input type="text" id="place" placeholder="place" formControlName="place">
-                            <input type="text" id="designation" placeholder="designation" formControlName="designation">
-                            <input type="text" id="description" placeholder="description" formControlName="description">
-                            <input type="text" id="year" placeholder="year" formControlName="year">
-                            <button class="add-remove" type="button" (click)="experience.removeAt(i)">-</button>
-                        </div>
-                    </div>
-                    <button class="add-remove" type="button" (click)="addExperience()">+</button>
-                </div>
-            </div>
-            <div formArrayName="education">
-                <div>
-                    <label for="education">Education</label>
-                    <div *ngFor="let control of education.controls; let i = index">
-                        <div [formGroupName]="i">
-                            <input type="text" id="school" placeholder="school" formControlName="school">
-                            <input type="text" id="degree" placeholder="degree" formControlName="degree">
-                            <input type="text" id="score" placeholder="score" formControlName="score">
-                            <button class="add-remove" type="button" (click)="education.removeAt(i)">-</button>
-                        </div>
-                    </div>
-                    <button class="add-remove" type="button" (click)="addEducation()">+</button>
-                </div>
-            </div>
-            <div>
-                <button type="submit">SUBMIT</button>
-                <button type="reset">RESET</button>
-            </div>
+                         <label for="designation">Designation</label>
+                         <div>
+                             <input type="text" id="designation" placeholder="Enter Designation" formControlName="designation">
+                             <div *ngIf="resumeform.get('userdetails.designation')?.touched && resumeform.get('userdetails.designation')?.errors?.['required']">This Field is Required</div>
+                         </div>
+                     </div>
+                     <div>
+                         <label for="email">Electronic mail</label>
+                         <div>
+                             <input type="email" id="email" placeholder="Enter Email" formControlName="email">
+                             <div *ngIf="resumeform.get('userdetails.email')?.touched && resumeform.get('userdetails.email')?.errors?.['required']">This Field is Required</div>
+                         </div>
+                     </div>
+                     <div>
+                         <label for="phone">Phone number</label>
+                         <div>
+                             <input type="tel" id="phone" placeholder="Enter Phone Number" formControlName="phone">
+                             <div *ngIf="resumeform.get('userdetails.phone')?.touched && resumeform.get('userdetails.phone')?.errors?.['required']">This Field is Required</div>
+                         </div>
+                     </div>
+                 </div>
+                 <div formArrayName="skills">
+                     <label for="skills">Skills</label>
+                     <div *ngFor="let cont of skills.controls; let i = index">
+                         <div [formGroupName]="i">
+                             <input type="text" id="skills" placeholder="Enter your Skill" formControlName="skills">
+                             <div *ngIf="getAsFG(cont).get('skills')?.touched && getAsFG(cont).get('skills')?.errors?.['required']">This Field is Required</div>
+                             <button class="add-remove" type="button" (click)="skills.removeAt(i)">-- Remove Skill </button>
+                         </div>
+                     </div>
+                     <button class="add-remove" type="button" (click)="addSkills()">++ Add Skill</button>
+                     
+                 </div>
+                 <div formArrayName="experience" >
+                     <div>
+                         <label for="experience">Experience</label>
+                         <div *ngFor="let cont of experience.controls; let i = index">
+                             <div [formGroupName]="i">
+                                 <input type="text" id="place" placeholder="place" formControlName="place">
+                                 <div *ngIf="getAsFG(cont).get('place')?.touched && getAsFG(cont).get('place')?.errors?.['required']">This Field is Required</div>
+                                 <input type="text" id="designation" placeholder="designation" formControlName="designation">
+                                 <div *ngIf="getAsFG(cont).get('designation')?.touched && getAsFG(cont).get('designation')?.errors?.['required']">This Field is Required</div>
+                                 <input type="text" id="description" placeholder="description" formControlName="description">
+                                 <div *ngIf="getAsFG(cont).get('description')?.touched && getAsFG(cont).get('description')?.errors?.['required']">This Field is Required</div>
+                                 <input type="text" id="year" placeholder="year" formControlName="year">
+                                 <div *ngIf="getAsFG(cont).get('year')?.touched && getAsFG(cont).get('year')?.errors?.['required']">This Field is Required</div>
+                                 <button class="add-remove" type="button" (click)="experience.removeAt(i)">-- Remove Experience</button>
+                             </div>
+                         </div>
+                         <button class="add-remove" type="button" (click)="addExperience()">++ Add Experience</button>
+                     </div>
+                 </div>
+                 <div formArrayName="education">
+                     <div>
+                         <label for="education">Education</label>
+                         <div *ngFor="let cont of education.controls; let i = index">
+                             <div [formGroupName]="i">
+                                 <input type="text" id="school" placeholder="school" formControlName="school">
+                                 <div *ngIf="getAsFG(cont).get('school')?.touched && getAsFG(cont).get('school')?.errors?.['required']">This Field is Required</div>
+                                 <input type="text" id="degree" placeholder="degree" formControlName="degree">
+                                 <div *ngIf="getAsFG(cont).get('degree')?.touched && getAsFG(cont).get('degree')?.errors?.['required']">This Field is Required</div>
+                                 <input type="text" id="score" placeholder="score" formControlName="score">
+                                 <div *ngIf="getAsFG(cont).get('score')?.touched && getAsFG(cont).get('score')?.errors?.['required']">This Field is Required</div>
+                                 <button class="add-remove" type="button" (click)="education.removeAt(i)">-- Remove Education</button>
+                             </div>
+                         </div>
+                         <button class="add-remove" type="button" (click)="addEducation()">++ Add Education</button>
+                     </div>
+                 </div>
+                 <div>
+                     <button type="submit" [disabled]="!resumeform.valid">SUBMIT</button>
+                     <button type="reset">RESET</button>
+                 </div>
+            </fieldset>
         </form>
     </div>
 </div>
