@@ -1,0 +1,49 @@
+<section class="container">
+    <form class="d-flex flex-wrap align-start formstyle" [formGroup]="usersForm" (ngSubmit)="onSubmit()">
+        <div>
+            <input type="text" name="fname" id="fName" placeholder="First Name" formControlName="fname">
+            <div *ngIf="!usersForm.get('fname')?.valid && (usersForm.get('fname')?.dirty ||usersForm.get('fname')?.touched)">
+                <div [hidden]="!usersForm.get('fname')?.errors?.['required']">First Name is required</div>
+            </div>
+        </div>
+        <div>
+            <input type="text" name="lastname" id="lName" placeholder="Last Name" formControlName="lname">
+            <div *ngIf="!usersForm.get('lname')?.valid && (usersForm.get('lname')?.dirty ||usersForm.get('lname')?.touched)">
+                <div [hidden]="!usersForm.get('lname')?.errors?.['required']">Last Name is required</div>
+            </div>
+        </div>
+        <div>
+            <input type="email" name="email" id="eMail" placeholder="Email" formControlName="email">
+            <div *ngIf="!usersForm.get('email')?.valid && (usersForm.get('email')?.dirty ||usersForm.get('email')?.touched)">
+                <div [hidden]="!usersForm.get('email')?.errors?.['required']">Email is required</div>
+            </div>
+        </div>
+        <div>
+            <input type="text" name="contactnumber" id="contactNumber" placeholder="Primary Contact Number" formControlName="contact">
+            <div *ngIf="!usersForm.get('contact')?.valid && (usersForm.get('contact')?.dirty ||usersForm.get('contact')?.touched)">
+                <div [hidden]="!usersForm.get('contact')?.errors?.['required']">Contact is required</div>
+            </div>
+        </div>
+        <div></div>
+        <div>
+            <select name="clientname" id="clientName" formControlName="clients">
+                <option *ngFor="let c of clients" [value]="c.clientname">{{c.clientname}}</option>
+            </select>
+            <div *ngIf="!usersForm.get('clients')?.valid && (usersForm.get('clients')?.dirty ||usersForm.get('clients')?.touched)">
+                <div [hidden]="!usersForm.get('clients')?.errors?.['required']">Clients Name is required</div>
+            </div>
+        </div>
+        <div>
+            <select name="offices" id="offices" formControlName="offices">
+                <option *ngFor="let o of offices" [value]="o.officename">{{o.officename}}</option>
+            </select>
+            <div *ngIf="!usersForm.get('offices')?.valid && (usersForm.get('offices')?.dirty ||usersForm.get('offices')?.touched)">
+                <div [hidden]="!usersForm.get('offices')?.errors?.['required']">Office Name is required</div>
+            </div>
+        </div>
+        <div class="d-flex button-position">
+            <button class="btn btn-cancel" type="reset" (click)="onReset()">CANCEL</button>
+            <button class="btn btn-save" type="submit">SAVE</button>
+        </div>
+    </form>
+</section>

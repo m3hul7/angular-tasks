@@ -11,13 +11,16 @@ const routes: Routes = [
   // { path: 'parent', component: ParentComponent},
 
   {
-    path: '' , redirectTo:'user', pathMatch:'full'
+    path: '' , redirectTo:'users', pathMatch:'full'
   },
   {
     path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule)
   },
   
-  { path: 'resume', loadChildren: () => import('./modules/resume-builder/resume-builder.module').then(m => m.ResumeBuilderModule) }
+  { path: 'resume', loadChildren: () => import('./modules/resume-builder/resume-builder.module').then(m => m.ResumeBuilderModule) },
+  {
+    path: 'users', loadChildren: () => import('./assessment/users/users.module').then(m => m.UsersModule)
+  }
 ];
 
 

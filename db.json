@@ -1,4 +1,78 @@
 {
+  "clients": [
+    {
+      "id": 1,
+      "clientname": "Apple"
+    },
+    {
+      "id": 2,
+      "clientname": "JBL"
+    },
+    {
+      "id": 3,
+      "clientname": "1Rivet"
+    }
+  ],
+  "offices": [
+    {
+      "id": 1,
+      "officename": "Office1"
+    },
+    {
+      "id": 2,
+      "officename": "Office2"
+    },
+    {
+      "id": 3,
+      "officename": "Office3"
+    },
+    {
+      "id": 4,
+      "officename": "Office4"
+    },
+    {
+      "id": 5,
+      "officename": "Office5"
+    }
+  ],
+  "users": [
+    {
+      "fname": "adada",
+      "lname": "swswsw",
+      "email": "sdfdf@gmai.com",
+      "contact": "2342424242",
+      "clients": "JBL",
+      "offices": "Office2",
+      "id": 2
+    },
+    {
+      "fname": "adada",
+      "lname": "swswsw",
+      "email": "sdfdf@gmai.com",
+      "contact": "2342424242",
+      "clients": "JBL",
+      "offices": "Office4",
+      "id": 3
+    },
+    {
+      "fname": "adada",
+      "lname": "swswsw",
+      "email": "sdfdf@gmai.com",
+      "contact": "2342424242",
+      "clients": "JBL",
+      "offices": "Office2",
+      "id": 4
+    },
+    {
+      "fname": "mehul",
+      "lname": "patel",
+      "email": "sdfdf@gmai.com",
+      "contact": "2342424242",
+      "clients": "JBL",
+      "offices": "Office2",
+      "id": 6
+    }
+  ],
   "resumePost": [
     {
       "userdetails": {
