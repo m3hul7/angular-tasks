@@ -1,16 +1,62 @@
 .container {
-    height: 100vh;
     overflow: hidden;
+    position: relative;
+    height: 100%;
+    
+}
+.container label {
+    position: absolute;
+    z-index: 100;
+    font-size: 2rem;
+    /* height: 200px; */
+    left: 300px;
+    top : 30px;
+    transition: all 0.5s ease;
+    background-color: white;
+    /* color: #f8f8fa; */
+    padding: 3px 6px ;
+    border-radius: 5px;
 }
 .d-flex {
     display: flex;
 }
 .sidebar {
-    width: 250px;
-    height: 100vh;
+    /* background: rgb(5, 68, 104); */
+    /* position: fixed; */
+    flex: 0 0 250px;
+    
+
+
 }
+
 .outlet {
-    width: 100%;
+    flex-grow: 1;
+    height: 100%;
     background-color: #f8f8fa;
-    overflow: auto;
+    /* overflow: auto; */
+    margin-left: 250px;
+    
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 100px 50px ;
+    z-index : 99;
+    /* border:  11px solid red; */
+    transition: all 0.5s ease;
+}
+
+input[type=checkbox]:checked ~ .outlet  {
+    margin-left: 75px;
+    
+
+
+} 
+input[type=checkbox]:checked ~ label  {
+    left: 100px;
+}
+
+input[type=checkbox] {
+    display: none;
 }

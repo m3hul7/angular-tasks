@@ -2,14 +2,18 @@
   "clients": [
     {
       "id": 1,
-      "clientname": "Apple"
+      "clientname": "ALL"
     },
     {
       "id": 2,
-      "clientname": "JBL"
+      "clientname": "Apple"
     },
     {
       "id": 3,
+      "clientname": "JBL"
+    },
+    {
+      "id": 4,
       "clientname": "1Rivet"
     }
   ],
@@ -37,11 +41,11 @@
   ],
   "users": [
     {
-      "fname": "adada",
+      "fname": "viral",
       "lname": "swswsw",
       "email": "sdfdf@gmai.com",
       "contact": "2342424242",
-      "clients": "JBL",
+      "clients": "1Rivet",
       "offices": "Office2",
       "id": 2
     },
@@ -59,7 +63,7 @@
       "lname": "swswsw",
       "email": "sdfdf@gmai.com",
       "contact": "2342424242",
-      "clients": "JBL",
+      "clients": "Apple",
       "offices": "Office2",
       "id": 4
     },

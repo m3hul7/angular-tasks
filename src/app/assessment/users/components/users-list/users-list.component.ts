@@ -14,6 +14,7 @@ export class UsersListComponent implements OnInit{
   length?: number
   clients: clients[] = []
   showForm: boolean = false
+  selectedOption:string = 'ALL'
 
   constructor(private userService: UsersService) {
     this.userService.change.subscribe((value) => { this.showForm = value, this.getUsersData() }) 
@@ -58,6 +59,9 @@ export class UsersListComponent implements OnInit{
 
   onClickNewUser(){
     this.showForm = true
+  }
+  onchange(event:any){
+    this.selectedOption = event.target.value
   }
 
 }

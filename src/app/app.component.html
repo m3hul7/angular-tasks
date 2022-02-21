@@ -1,10 +1,15 @@
-
 <!-- <mat-tab-group>
     <mat-tab label="DataBinding"><app-parent></app-parent></mat-tab>
     <mat-tab label="Dir-Pipe"><app-dir-pipe></app-dir-pipe></mat-tab>
 </mat-tab-group> -->
 <!-- <app-sidebar></app-sidebar> -->
 <div class="d-flex container">
-    <!-- <app-sidebar class="sidebar"></app-sidebar> -->
-    <div class="outlet"><router-outlet></router-outlet></div>
+    <input type="checkbox" id="checkBox">
+    <label for="checkBox">&#9776; </label>
+    <div class="sidebar">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="outlet">
+        <router-outlet></router-outlet>
+    </div>
 </div>

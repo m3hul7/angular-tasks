@@ -27,9 +27,9 @@
         <div></div>
         <div>
             <select name="clientname" id="clientName" formControlName="clients">
-                <option *ngFor="let c of clients" [value]="c.clientname">{{c.clientname}}</option>
+                <option *ngFor="let c of clients.slice(1)" [value]="c.clientname">{{c.clientname}}</option>
             </select>
-            <div *ngIf="!usersForm.get('clients')?.valid && (usersForm.get('clients')?.dirty ||usersForm.get('clients')?.touched)">
+            <div  *ngIf="!usersForm.get('clients')?.valid && (usersForm.get('clients')?.dirty ||usersForm.get('clients')?.touched)">
                 <div [hidden]="!usersForm.get('clients')?.errors?.['required']">Clients Name is required</div>
             </div>
         </div>

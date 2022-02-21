@@ -1,9 +1,9 @@
-<section class="container">
-    <div class="d-flex justify-between align-center">
+<section class="d-flex flex-dir-col container">
+    <div class="d-flex justify-between align-center flex-grow: 1">
         <div>Users</div>
         <div>
             <label for="client">Client:</label>
-            <select name="clientname" id="clientName">
+            <select name="clientname" id="clientName" (change)="onchange($event)">
                 <option *ngFor="let c of clients">{{c.clientname}}</option>
             </select>
             <button class="btn" (click)="onClickNewUser()" [disabled]="showForm">+ NEW USER</button>
@@ -12,7 +12,7 @@
     <div *ngIf="showForm">
         <app-users-form></app-users-form>
     </div>
-    <div class="table-container">
+    <div class="table-container flex-grow-1">
         <table>
             <tr>
                 <th>FIRST NAME</th>
@@ -23,7 +23,7 @@
                 <th>CONTACT NUMBER</th>
                 <th>ACTIONS</th>
             </tr>
-            <tr *ngFor="let u of users; let i = index" >
+            <tr *ngFor="let u of users | searchOptions:selectedOption; let i = index" >
                 <td>{{u.fname}}</td>
                 <td>{{u.lname}}</td>
                 <td>{{u.clients}}</td>

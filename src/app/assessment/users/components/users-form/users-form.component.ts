@@ -64,7 +64,7 @@ export class UsersFormComponent implements OnInit {
           (data) => { console.log("success") },
           (error) => { console.log("error") }
         )
-        this.userService.setData(false);
+        setTimeout(()=> {this.userService.setData(false);},1000)
       }
       else
       this.validateAllFormFields(this.usersForm);
@@ -75,7 +75,7 @@ export class UsersFormComponent implements OnInit {
           (data) => { console.log("success") },
           (error) => { console.log("error") }
         )
-        this.userService.setData(false);
+        setTimeout(()=> {this.userService.setData(false);},1000)
       }
       else
       this.validateAllFormFields(this.usersForm);
